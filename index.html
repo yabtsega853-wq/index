@@ -1,1040 +1,1392 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>DAGIM Beauty Salon and Spa | Professional Beauty & Relaxation in Addis Ababa</title>
-
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDF8F5;
-            color: #2C241F;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --primary: #C68B6E;
-            /* warm terracotta/copper */
-            --primary-dark: #A86E4F;
-            --primary-light: #F0DCD0;
-            --secondary: #9B6A4A;
-            /* rich brown */
-            --accent: #D4A373;
-            /* soft sand */
-            --gold: #C9A84C;
-            /* elegant gold accent */
-            --black: #1A1512;
-            --dark-gray: #3D352F;
-            --light-bg: #FFFFFF;
-            --warm-bg: #FEF8F2;
-            --gray-mid: #7A6B60;
-            --gray-soft: #B8A99C;
-            --border-light: #F0E4DC;
-            --card-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.05);
-            --hover-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* typography */
-        h1,
-        h2,
-        h3,
-        .logo,
-        .section-title,
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* header nav */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 248, 242, 0.96);
-            backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid var(--border-light);
-            padding: 1rem 0;
-        }
-
-        .nav-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: var(--black);
-        }
-
-        .logo span {
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: var(--black);
-            transition: color 0.2s ease;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            font-weight: 500;
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(198, 139, 110, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
-            padding: 0.65rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* hero section */
-        .hero {
-            position: relative;
-            padding: 100px 0 120px;
-            border-radius: 0 0 48px 48px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #FEF5ED 0%, #FCE8DD 100%);
-        }
-
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.04"><path fill="none" stroke="%23C68B6E" stroke-width="0.5" d="M30,30 L40,30 L35,38 Z M60,50 L70,50 L65,58 Z M20,70 L30,70 L25,78 Z"/><circle cx="50" cy="20" r="4" fill="%23C68B6E"/><circle cx="80" cy="40" r="3" fill="%23C68B6E"/></svg>');
-            background-repeat: repeat;
-            background-size: 60px;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-grid {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-badge {
-            background: var(--primary);
-            color: white;
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-            letter-spacing: 1px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.8rem;
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            color: var(--black);
-        }
-
-        .hero-highlight {
-            color: var(--primary);
-            position: relative;
-        }
-
-        .hero-desc {
-            font-size: 1rem;
-            color: var(--gray-mid);
-            margin-bottom: 2rem;
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            flex: 1;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.02);
-        }
-
-        /* section titles */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-
-        .section-title span {
-            color: var(--primary);
-        }
-
-        .section-sub {
-            text-align: center;
-            color: var(--gray-soft);
-            margin-bottom: 3rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        /* service cards */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .service-card {
-            background: var(--light-bg);
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.35s ease;
-            border: 1px solid var(--border-light);
-            text-align: center;
-            padding: 2rem 1.5rem;
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-            border-color: var(--primary-light);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.2rem;
-            font-size: 1.8rem;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .service-card p {
-            color: var(--gray-mid);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-weight: 600;
-            color: var(--secondary);
-            font-size: 1rem;
-        }
-
-        /* gallery section */
-        .gallery-page {
-            background: var(--light-bg);
-            padding: 60px 0;
-            border-radius: 48px;
-            margin: 40px 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 1 / 1;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item:hover::after {
-            content: "🔍";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            color: white;
-        }
-
-        /* lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 16px;
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: white;
-            font-size: 2.5rem;
-            cursor: pointer;
-        }
-
-        .lightbox .close:hover {
-            color: var(--primary);
-        }
-
-        .lightbox .caption {
-            color: white;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        /* video section */
-        .video-gallery {
-            background: var(--light-bg);
-            padding: 60px 0;
-            border-radius: 48px;
-            margin: 40px 0;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-            margin-top: 2rem;
-        }
-
-        .video-card {
-            background: var(--black);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-card video {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .video-card .video-caption {
-            padding: 1rem;
-            text-align: center;
-            color: white;
-            font-size: 0.85rem;
-        }
-
-        /* moroccan bath special section */
-        .special-section {
-            background: linear-gradient(135deg, #FEF5ED 0%, #FCE8DD 100%);
-            padding: 60px 0;
-            border-radius: 48px;
-            margin: 40px 0;
-        }
-
-        .special-grid {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .special-content {
-            flex: 1;
-        }
-
-        .special-content h3 {
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-        }
-
-        .special-features {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .feature-badge {
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            color: var(--primary-dark);
-            font-weight: 500;
-        }
-
-        .special-img {
-            flex: 1;
-            border-radius: 28px;
-            overflow: hidden;
-        }
-
-        /* about section */
-        .about {
-            background-color: var(--light-bg);
-            padding: 70px 0;
-            border-radius: 48px;
-            margin: 40px 0;
-        }
-
-        .about-flex {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--black);
-            border-left: 4px solid var(--primary);
-            padding-left: 1rem;
-        }
-
-        .about-quote {
-            font-style: italic;
-            color: var(--primary);
-            margin-top: 1rem;
-            padding: 1rem;
-            background: var(--primary-light);
-            border-radius: 20px;
-        }
-
-        .about-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 28px;
-            overflow: hidden;
-        }
-
-        /* contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 48px;
-            margin-top: 2rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .info-card {
-            background: #FFFFFF;
-            padding: 1.8rem;
-            border-radius: 28px;
-            text-align: center;
-            border: 1px solid #F0E4DC;
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--card-shadow);
-        }
-
-        .info-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--black);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .info-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-
-        .call-wa-group {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .socials a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: #F0EBE5;
-            color: #8A7E72;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 1.3rem;
-        }
-
-        .socials a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .instagram-highlight {
-            color: var(--primary);
-            margin-top: 0.5rem;
-        }
-
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            margin-top: 1rem;
-        }
-
-        footer {
-            background: #1A1512;
-            color: #B8A99C;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-radius: 32px 32px 0 0;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .hero-grid {
-                text-align: center;
-            }
-
-            .hero-desc {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .about-stats {
-                justify-content: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael's Shop | Premium Beauty Supply in Addis Ababa</title>
+  <meta name="description" content="Discover authentic cosmetics, skincare, and beauty essentials at Michael's Shop. Located on Bole Road, Addis Ababa. Rated 4.6★ for quality and service.">
+  
+  <!-- Google Fonts: Modern Premium Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ========== RESET & VARIABLES ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2A1B3D;        /* Deep luxurious purple */
+      --primary-light: #4A2C6D;
+      --accent: #C9A96E;         /* Soft gold */
+      --accent-hover: #B8934A;
+      --bg-light: #F9F6F2;       /* Warm off-white */
+      --bg-white: #FFFFFF;
+      --text-dark: #1E1A24;
+      --text-muted: #6B5E70;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== STICKY NAVBAR ========== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 14px 0;
+      transition: var(--transition);
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .btn-call {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-call:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(42, 27, 61, 0.25);
+    }
+    .btn-call i { font-size: 0.8rem; }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(42, 27, 61, 0.85) 0%, rgba(42, 27, 61, 0.4) 100%), url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 0;
+    }
+    .hero-content {
+      max-width: 650px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 169, 110, 0.2);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .hero h1 span {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      max-width: 500px;
+      font-weight: 300;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(201, 169, 110, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    /* ========== SECTION STYLES ========== */
+    .section-padding {
+      padding: 100px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-header .subtitle {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* ========== SERVICES / PRODUCTS ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .service-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 40px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--primary-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #f3eefa, #e8dff5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 1.8rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.05) rotate(5deg);
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .service-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .service-link:hover { gap: 12px; color: var(--accent-hover); }
+
+    /* ========== ABOUT ========== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .about-image:hover img { transform: scale(1.03); }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(201, 169, 110, 0.3);
+      border-radius: var(--radius);
+      pointer-events: none;
+      transform: translate(12px, 12px);
+      transition: var(--transition);
+    }
+    .about-image:hover::after { transform: translate(6px, 6px); }
+    .about-text h2 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .about-text .highlight {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .stat-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ========== WHY CHOOSE US ========== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .why-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-sm);
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .why-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0f7e6;
+      color: #3a7d2c;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .testimonial-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .testimonial-card .quote-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      opacity: 0.3;
+      margin-bottom: 16px;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testimonial-author img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .testimonial-author h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .testimonial-author span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .stars {
+      color: #f5b342;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    /* ========== GALLERY ========== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      height: 280px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(42, 27, 61, 0.4), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* ========== HOURS & LOCATION ========== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hours-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .hours-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .hours-table tr {
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td {
+      padding: 12px 0;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 500;
+    }
+    .open-badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 2px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      height: 100%;
+      min-height: 400px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .contact-info-card {
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-info-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+    .contact-info-card p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-item i {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-item div h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2px;
+    }
+    .contact-item div a, .contact-item div span {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .contact-item div a:hover { color: var(--accent); }
+
+    .contact-form {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .contact-form h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      background: var(--bg-light);
+      transition: var(--transition);
+      color: var(--text-dark);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .btn-submit {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-submit:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(42, 27, 61, 0.3);
+    }
+
+    /* ========== WHATSAPP FLOAT ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      background: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 60px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand h3 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+    .footer-brand h3 span { color: var(--accent); }
+    .footer-brand p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .footer-social a:hover {
+      background: var(--accent);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+    .footer-col ul li a,
+    .footer-col ul li span {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover {
+      color: var(--accent);
+      padding-left: 4px;
+    }
+    .footer-bottom {
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .about-grid,
+      .info-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+        gap: 20px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+      }
+      .nav-links.active a { font-size: 1rem; }
+      .about-image img { height: 350px; }
+    }
+
+    @media (max-width: 600px) {
+      .section-padding { padding: 60px 0; }
+      .hero { min-height: 80vh; padding: 60px 0; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 0.95rem; }
+      .btn-primary, .btn-outline { padding: 14px 28px; font-size: 0.9rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gallery-item { height: 180px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-stats { flex-wrap: wrap; gap: 24px; }
+      .contact-info-card, .contact-form { padding: 32px 24px; }
+      .hours-card { padding: 28px 20px; }
+      .whatsapp-float { width: 52px; height: 52px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+      .nav-cta .btn-call span { display: none; }
+      .nav-cta .btn-call { padding: 10px 16px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-flex">
-            <div class="logo">DAGIM <span>Beauty</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery-page">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="tel:+251911695246" class="btn-primary">📞 Book Now</a>
+  <!-- ========== STICKY NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Michael's <span>Shop</span></a>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Collections</a>
+        <a href="#about">About</a>
+        <a href="#why">Why Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="tel:+251911439526" class="btn-call">
+          <i class="fas fa-phone-alt"></i>
+          <span>Call Now</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Addis Ababa · Bole Road</div>
+        <h1>Premium Beauty <span>Essentials</span> for Every Ritual</h1>
+        <p>Discover authentic cosmetics, skincare, and fragrances curated for the modern individual. Visit Michael's Shop on Bole Road for a personalized beauty experience.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn-primary">
+            Explore Collections <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="tel:+251911439526" class="btn-outline">
+            <i class="fas fa-phone-alt"></i> +251 91 143 9526
+          </a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <!-- Hero section -->
-        <section id="home" class="hero">
-            <div class="hero-pattern"></div>
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">✨ Professional Beauty & Spa</div>
-                    <h1>Think Outside <span class="hero-highlight">Bole</span><br>Classic Salon</h1>
-                    <p class="hero-desc">DAGIM Beauty Salon and Spa — professional services, exceptional hospitality,
-                        and the highest standards of cleanliness. Your beauty, our passion.</p>
-                    <div class="hero-buttons">
-                        <a href="#services" class="btn-primary">Explore Services →</a>
-                        <a href="https://wa.me/251911695246" class="btn-outline"><i class="fab fa-whatsapp"></i>
-                            WhatsApp</a>
-                    </div>
-                    <div class="instagram-highlight">
-                        <i class="fab fa-instagram"></i> @dagimbeautysalon
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=500&fit=crop"
-                        alt="DAGIM Beauty Salon">
-                </div>
+  <!-- ========== SERVICES / PRODUCTS ========== -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Curated For You</span>
+        <h2>Our Collections</h2>
+        <p>From skincare essentials to luxurious fragrances, we bring you the best in beauty.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
+          <h3>Skincare</h3>
+          <p>Nourishing moisturizers, serums, and treatments for radiant, healthy skin.</p>
+          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Makeup</h3>
+          <p>Premium foundations, lipsticks, and eye palettes from top global brands.</p>
+          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-wind"></i></div>
+          <h3>Fragrances</h3>
+          <p>Signature scents and luxury perfumes that leave a lasting impression.</p>
+          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Hair Care</h3>
+          <p>Revitalizing shampoos, conditioners, and styling products for all hair types.</p>
+          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section-padding" id="about" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80" alt="Michael's Shop interior with beauty products" loading="lazy">
+        </div>
+        <div class="about-text reveal">
+          <span class="subtitle" style="color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Our Story</span>
+          <h2>Where Beauty Meets <span class="highlight">Authenticity</span></h2>
+          <p>Located in the heart of Addis Ababa on Bole Road, Michael's Shop has been a trusted destination for beauty enthusiasts seeking genuine, high-quality products.</p>
+          <p>We carefully curate our shelves with products from renowned international brands, ensuring every item meets our strict standards for authenticity and efficacy. Whether you're building a daily skincare routine or searching for the perfect gift, our knowledgeable team is here to guide you.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <h4>4.6★</h4>
+              <p>Google Rating</p>
             </div>
-        </section>
-
-        <!-- Services section -->
-        <section id="services" class="container" style="margin-top: 60px;">
-            <h2 class="section-title">Our <span>Signature</span> Services</h2>
-            <p class="section-sub">Professional care with a personal touch</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cut"></i></div>
-                    <h3>Hair Styling</h3>
-                    <p>Cut, color, highlights, keratin, and special occasion styling.</p>
-                    <div class="price">From 450 ETB</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3>Nail Care</h3>
-                    <p>Manicure, pedicure, gel polish, acrylics, and nail art.</p>
-                    <div class="price">From 350 ETB</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hot-tub"></i></div>
-                    <h3>Moroccan Bath</h3>
-                    <p>Traditional exfoliating and cleansing body treatment.</p>
-                    <div class="price">From 650 ETB</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-spa"></i></div>
-                    <h3>Massage Therapy</h3>
-                    <p>Swedish, deep tissue, and aromatherapy massage.</p>
-                    <div class="price">From 550 ETB</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-face-smile"></i></div>
-                    <h3>Facial Treatments</h3>
-                    <p>Deep cleansing, brightening, and anti-aging facials.</p>
-                    <div class="price">From 500 ETB</div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Makeup Artistry</h3>
-                    <p>Bridal, evening, and photo shoot makeup.</p>
-                    <div class="price">From 800 ETB</div>
-                </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Authentic Products</p>
             </div>
-        </section>
-
-        <!-- Moroccan Bath Special Section -->
-        <section class="special-section">
-            <div class="container special-grid">
-                <div class="special-content">
-                    <h3>✨ Moroccan Bath Experience</h3>
-                    <p>Indulge in our signature Moroccan Bath — a traditional full-body exfoliation and cleansing
-                        treatment using black soap and kessa glove. Leaves your skin silky smooth and deeply refreshed.
-                    </p>
-                    <div class="special-features">
-                        <span class="feature-badge">🧴 Moroccan Black Soap</span>
-                        <span class="feature-badge">🧤 Kessa Glove Exfoliation</span>
-                        <span class="feature-badge">🌿 Argan Oil Massage</span>
-                        <span class="feature-badge">💆‍♀️ Steam Session</span>
-                    </div>
-                    <a href="#contact" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Book Your
-                        Moroccan Bath →</a>
-                </div>
-                <div class="special-img">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&h=400&fit=crop"
-                        style="width:100%; border-radius: 28px;" alt="Moroccan Bath">
-                </div>
+            <div class="stat-item">
+              <h4>5+</h4>
+              <p>Years of Trust</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery-page" class="gallery-page">
-            <div class="container">
-                <h2 class="section-title">Our <span>Gallery</span></h2>
-                <p class="section-sub">Moments of beauty at DAGIM</p>
-                <div class="gallery-grid" id="galleryGrid"></div>
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="section-padding" id="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Why Choose Us</span>
+        <h2>The Michael's Shop Difference</h2>
+        <p>We go beyond selling products — we deliver an experience built on trust and expertise.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>100% Authentic</h3>
+          <p>Every product is sourced directly from authorized distributors. No counterfeits, ever.</p>
+          <div class="rating-badge"><i class="fas fa-star"></i> 4.6 on Google</div>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Expert Guidance</h3>
+          <p>Our team helps you find the right products for your specific skin type and concerns.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Prime Location</h3>
+          <p>Conveniently situated on Bole Road, easily accessible for residents and visitors alike.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3>Open Late</h3>
+          <p>We're open until 8:00 PM daily, so you can shop for beauty essentials after work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section-padding" style="background: var(--bg-white);" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Testimonials</span>
+        <h2>What Our Customers Say</h2>
+        <p>Real reviews from real beauty lovers in Addis Ababa.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"I've been shopping at Michael's for over a year now. Their product range is unmatched, and I love that everything is 100% authentic. The staff really knows their stuff!"</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Customer" loading="lazy">
+            <div>
+              <h4>Selamawit T.</h4>
+              <span>Regular Customer</span>
             </div>
-        </section>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p>"Finally found a place in Addis where I can trust the products are genuine. The location on Bole Road is super convenient. Highly recommend for anyone serious about skincare."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Customer" loading="lazy">
+            <div>
+              <h4>Dawit M.</h4>
+              <span>Skincare Enthusiast</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"The customer service is exceptional. They helped me pick the perfect foundation shade and even gave me tips on application. My go-to beauty shop in the city!"</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Customer" loading="lazy">
+            <div>
+              <h4>Hanna G.</h4>
+              <span>Makeup Artist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox">
-            <span class="close">&times;</span>
-            <img id="lightboxImg" src="" alt="">
-            <div class="caption" id="lightboxCaption"></div>
+  <!-- ========== GALLERY ========== -->
+  <section class="section-padding" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Gallery</span>
+        <h2>Step Inside Our Store</h2>
+        <p>A glimpse of the premium beauty products waiting for you.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="Cosmetics display" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80" alt="Skincare products" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&q=80" alt="Makeup collection" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80" alt="Perfume bottles" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOURS & LOCATION ========== -->
+  <section class="section-padding" id="hours" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Visit Us</span>
+        <h2>Opening Hours & Location</h2>
+        <p>We're here six days a week to serve your beauty needs.</p>
+      </div>
+      <div class="info-grid">
+        <div class="hours-card reveal">
+          <h3><i class="fas fa-clock" style="color: var(--accent); margin-right: 12px;"></i>Opening Hours</h3>
+          <table class="hours-table">
+            <tr>
+              <td>Monday</td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Friday <span class="open-badge">Open Now</span></td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>08:30 – 20:00</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>Closed</td>
+            </tr>
+          </table>
+          <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+            <i class="fas fa-info-circle" style="color: var(--accent);"></i> 
+            Hours may vary on public holidays. Please call ahead to confirm.
+          </p>
+        </div>
+        <div class="map-container reveal">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.549671670136!2d38.78608931536479!3d9.010123893546437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f6a4f0f0f3%3A0x3e6c0e3c3e6c0e3c!2sMichael's%20Shop!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Michael's Shop Location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Get In Touch</span>
+        <h2>Contact Us</h2>
+        <p>Have a question or want to check product availability? Reach out to us.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <h3>Let's Talk Beauty</h3>
+          <p>We're happy to help you find exactly what you're looking for.</p>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Address</h4>
+              <span>Bole Road, Addis Ababa, Ethiopia</span>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+251911439526">+251 91 143 9526</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/251911439526" target="_blank" rel="noopener">+251 91 143 9526</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Hours</h4>
+              <span>Mon – Sat: 08:30 – 20:00</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Video Gallery -->
-        <section class="video-gallery">
-            <div class="container">
-                <h2 class="section-title">Watch <span>Our Artistry</span></h2>
-                <p class="section-sub">See the transformation</p>
-                <div class="video-grid">
-                    <div class="video-card">
-                        <video controls
-                            poster="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&h=240&fit=crop">
-                            <source src="https://cdn.pixabay.com/video/2023/06/20/169525-836306941_tiny.mp4"
-                                type="video/mp4">
-                        </video>
-                        <div class="video-caption">💇‍♀️ Professional Hair Styling</div>
-                    </div>
-                    <div class="video-card">
-                        <video controls
-                            poster="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=240&fit=crop">
-                            <source src="https://cdn.pixabay.com/video/2023/05/18/165883-826867451_tiny.mp4"
-                                type="video/mp4">
-                        </video>
-                        <div class="video-caption">💅 Moroccan Bath Treatment</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent. We will contact you shortly.'); this.reset();">
+          <h3>Send a Message</h3>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-        <!-- About section -->
-        <section id="about" class="about">
-            <div class="container about-flex">
-                <div class="about-text">
-                    <h3>About DAGIM Beauty</h3>
-                    <p>DAGIM Beauty Salon and Spa is a premier destination for luxury beauty and wellness in Addis
-                        Ababa. Located in Nifas Silk-Lafto, near Kera/Gofa Gabriel, we offer a serene escape from the
-                        city's hustle.</p>
-                    <p>Our team of certified professionals uses only premium products to ensure you leave feeling
-                        refreshed, rejuvenated, and beautiful.</p>
-                    <div class="about-quote">
-                        "Good nails speaks louder than words! Classic salon, offering professional services with good
-                        hospitality and cleanliness."
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div>Happy Clients</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">10+</div>
-                            <div>Expert Stylists</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">25+</div>
-                            <div>Services</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <strong>⏰ Opening Hours:</strong> Mon–Sat 9:00 AM – 8:00 PM | Sun 10:00 AM – 6:00 PM
-                    </div>
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=400&fit=crop"
-                        alt="DAGIM Beauty Salon team">
-                </div>
-            </div>
-        </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Michael's <span>Shop</span></h3>
+          <p>Your trusted destination for authentic beauty products in Addis Ababa. Curated with care, delivered with expertise.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services">Collections</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#hours">Opening Hours</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><span>Bole Road, Addis Ababa</span></li>
+            <li><a href="tel:+251911439526">+251 91 143 9526</a></li>
+            <li><a href="mailto:info@michaelsshop.et">info@michaelsshop.et</a></li>
+            <li><span>Mon – Sat: 08:30 – 20:00</span></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Michael's Shop. All rights reserved. | Addis Ababa, Ethiopia</p>
+      </div>
+    </div>
+  </footer>
 
-        <!-- Contact section -->
-        <section id="contact" class="container" style="margin-bottom: 60px;">
-            <h2 class="section-title">Get in <span>touch</span></h2>
-            <div class="contact-grid">
-                <div class="info-card">
-                    <i class="fas fa-location-dot"></i>
-                    <h4>📍 Visit us</h4>
-                    <p>Kera/Gofa Gabriel, Near Police Station<br>Nifas Silk-Lafto, Addis Ababa, Ethiopia</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">XPCX+RPV, Mauritius St</p>
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.71!3d8.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTgnNDguMCJOIDM4wrA0MicyMC4wIkU!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
-                            width="100%" height="150" style="border:0; border-radius: 16px;" allowfullscreen=""
-                            loading="lazy"></iframe>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>📞 Call / WhatsApp</h4>
-                    <p><a href="tel:+251911695246" style="color: var(--primary); text-decoration: none;">+251 91 169
-                            5246</a></p>
-                    <div class="call-wa-group">
-                        <a href="tel:+251911695246" class="btn-primary" style="background: var(--primary);">📞 Call</a>
-                        <a href="https://wa.me/251911695246" class="btn-outline"><i class="fab fa-whatsapp"></i>
-                            WhatsApp</a>
-                    </div>
-                    <div class="socials">
-                        <a href="https://instagram.com/dagimbeautysalon" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://tiktok.com/@dagimbeautysalonandspa" target="_blank"><i
-                                class="fab fa-tiktok"></i></a>
-                        <a href="https://youtube.com/@dagimbeautysalon" target="_blank"><i
-                                class="fab fa-youtube"></i></a>
-                    </div>
-                    <p style="margin-top: 0.5rem;"><i class="fab fa-instagram"></i> @dagimbeautysalon</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <h4>⏰ Opening Hours</h4>
-                    <p>Monday – Saturday: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
-                    <p>✅ Walk-ins welcome</p>
-                    <p style="margin-top: 0.5rem;">📞 For appointments, call us!</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/251911439526" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-    <footer>
-        <p>© 2026 <strong>DAGIM Beauty Salon and Spa</strong> — Classic Salon with Exceptional Hospitality</p>
-        <p>📍 Kera/Gofa Gabriel, Addis Ababa | 📞 +251 91 169 5246 | @dagimbeautysalon</p>
-    </footer>
+  <!-- ========== SCHEMA.ORG JSON-LD ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Michael's Shop",
+    "description": "Premium beauty supply store offering authentic cosmetics, skincare, and fragrances in Addis Ababa.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bole Road",
+      "addressLocality": "Addis Ababa",
+      "addressCountry": "ET"
+    },
+    "telephone": "+251911439526",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:30",
+        "closes": "20:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "bestRating": "5",
+      "ratingCount": "50"
+    },
+    "priceRange": "$$",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80"
+  }
+  </script>
 
-    <script>
-        // ============================================
-        // 📸 EASY IMAGE MANAGEMENT - EDIT THIS ARRAY
-        // ============================================
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
 
-        const galleryImages = [
-            {
-                url: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop",
-                title: "Hair Styling",
-                description: "Professional hair cutting and coloring services"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&h=600&fit=crop",
-                title: "Makeup Artistry",
-                description: "Bridal and special occasion makeup"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop",
-                title: "Massage Therapy",
-                description: "Relaxing and therapeutic massage"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop",
-                title: "Salon Interior",
-                description: "Clean, welcoming atmosphere"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=600&fit=crop",
-                title: "Moroccan Bath",
-                description: "Traditional Moroccan bathing experience"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&h=600&fit=crop",
-                title: "Nail Care",
-                description: "Manicure, pedicure, and nail art"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop",
-                title: "Facial Treatment",
-                description: "Customized facials for glowing skin"
-            },
-            {
-                url: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&h=600&fit=crop",
-                title: "Spa Relaxation",
-                description: "Peaceful spa environment"
-            }
-        ];
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
 
-        // Render gallery
-        function renderGallery() {
-            const galleryGrid = document.getElementById('galleryGrid');
-            if (!galleryGrid) return;
-
-            galleryGrid.innerHTML = '';
-
-            galleryImages.forEach((image, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="${image.url}" alt="${image.title}" loading="lazy">`;
-                galleryItem.onclick = () => openLightbox(index);
-                galleryGrid.appendChild(galleryItem);
-            });
+    // Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
         }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-        // Lightbox
-        let currentImageIndex = 0;
+    revealElements.forEach(el => revealObserver.observe(el));
 
-        function openLightbox(index) {
-            currentImageIndex = index;
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
+    // Navbar shadow on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
 
-            lightbox.classList.add('active');
-            lightboxImg.src = galleryImages[index].url;
-            lightboxCaption.innerHTML = `<strong>${galleryImages[index].title}</strong><br>${galleryImages[index].description}`;
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        document.querySelector('.close')?.addEventListener('click', closeLightbox);
-        document.getElementById('lightbox')?.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('lightbox')) closeLightbox();
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('.nav-links a, .btn-primary[href^="#"], .btn-outline[href^="#"]').forEach(anchor => {
-            const hash = anchor.getAttribute('href');
-            if (hash && hash.startsWith('#')) {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = hash.substring(1);
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', renderGallery);
-    </script>
 </body>
-
 </html>
