@@ -355,6 +355,86 @@
     }
     .service-link:hover { gap: 12px; color: var(--accent-hover); }
 
+    /* ========== NEW: TRENDING PRODUCTS ========== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .product-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .product-card:hover .product-img img { transform: scale(1.08); }
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .product-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-info h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .product-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product-price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
     /* ========== ABOUT ========== */
     .about-grid {
       display: grid;
@@ -901,6 +981,7 @@
       
       <div class="nav-links" id="navLinks">
         <a href="#services">Collections</a>
+        <a href="#trending">Trending</a>
         <a href="#about">About</a>
         <a href="#why">Why Us</a>
         <a href="#gallery">Gallery</a>
@@ -939,12 +1020,12 @@
     </div>
   </header>
 
-  <!-- ========== SERVICES / PRODUCTS ========== -->
+  <!-- ========== SERVICES / CATEGORIES ========== -->
   <section class="section-padding" id="services">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Curated For You</span>
-        <h2>Our Collections</h2>
+        <h2>Shop by Category</h2>
         <p>From skincare essentials to luxurious fragrances, we bring you the best in beauty.</p>
       </div>
       <div class="services-grid">
@@ -952,32 +1033,137 @@
           <div class="service-icon"><i class="fas fa-spa"></i></div>
           <h3>Skincare</h3>
           <p>Nourishing moisturizers, serums, and treatments for radiant, healthy skin.</p>
-          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+          <a href="#trending" class="service-link">View Products <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
           <h3>Makeup</h3>
           <p>Premium foundations, lipsticks, and eye palettes from top global brands.</p>
-          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+          <a href="#trending" class="service-link">View Products <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-wind"></i></div>
           <h3>Fragrances</h3>
           <p>Signature scents and luxury perfumes that leave a lasting impression.</p>
-          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+          <a href="#trending" class="service-link">View Products <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-leaf"></i></div>
           <h3>Hair Care</h3>
           <p>Revitalizing shampoos, conditioners, and styling products for all hair types.</p>
-          <a href="#contact" class="service-link">Inquire <i class="fas fa-arrow-right"></i></a>
+          <a href="#trending" class="service-link">View Products <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ========== NEW: TRENDING PRODUCTS ========== -->
+  <section class="section-padding" style="background: var(--bg-white);" id="trending">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Bestsellers</span>
+        <h2>Trending Now</h2>
+        <p>Our most-loved products, handpicked by our beauty experts.</p>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card reveal">
+          <div class="product-img">
+            <span class="product-tag">New</span>
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80" alt="Vitamin C Serum" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Radiance Glow Serum</h3>
+            <p>Vitamin C & Hyaluronic Acid for bright, hydrated skin.</p>
+            <div class="product-price">ETB 1,250 <span>30ml</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <span class="product-tag">-20%</span>
+            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&q=80" alt="Matte Lipstick" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Velvet Matte Lipstick</h3>
+            <p>Long-lasting, highly pigmented formula in classic red.</p>
+            <div class="product-price">ETB 780 <span>3.5g</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&q=80" alt="Moisturizer" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Hydra-Boost Moisturizer</h3>
+            <p>72-hour hydration for dry and sensitive skin types.</p>
+            <div class="product-price">ETB 950 <span>50ml</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&q=80" alt="Perfume" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Oud Royale Eau de Parfum</h3>
+            <p>Warm, woody, and sophisticated scent for evenings.</p>
+            <div class="product-price">ETB 2,400 <span>100ml</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&q=80" alt="Foundation" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Luminous Silk Foundation</h3>
+            <p>Buildable coverage with a natural, radiant finish.</p>
+            <div class="product-price">ETB 1,600 <span>30ml</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <span class="product-tag">Bestseller</span>
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&q=80" alt="Hair Mask" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Repair & Shine Hair Mask</h3>
+            <p>Deep conditioning treatment for damaged hair.</p>
+            <div class="product-price">ETB 1,100 <span>200ml</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80" alt="Makeup Kit" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Essential Makeup Kit</h3>
+            <p>All-in-one palette for eyes, cheeks, and lips.</p>
+            <div class="product-price">ETB 1,850 <span>Set</span></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1585652757141-8837d676fac8?w=400&q=80" alt="Cleanser" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Gentle Foaming Cleanser</h3>
+            <p>Removes impurities without stripping natural oils.</p>
+            <div class="product-price">ETB 620 <span>150ml</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ========== ABOUT ========== -->
-  <section class="section-padding" id="about" style="background: var(--bg-white);">
+  <section class="section-padding" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-image reveal">
@@ -1008,7 +1194,7 @@
   </section>
 
   <!-- ========== WHY CHOOSE US ========== -->
-  <section class="section-padding" id="why">
+  <section class="section-padding" style="background: var(--bg-white);" id="why">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Why Choose Us</span>
@@ -1042,7 +1228,7 @@
   </section>
 
   <!-- ========== TESTIMONIALS ========== -->
-  <section class="section-padding" style="background: var(--bg-white);" id="testimonials">
+  <section class="section-padding" id="testimonials">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Testimonials</span>
@@ -1091,7 +1277,7 @@
   </section>
 
   <!-- ========== GALLERY ========== -->
-  <section class="section-padding" id="gallery">
+  <section class="section-padding" style="background: var(--bg-white);" id="gallery">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Gallery</span>
@@ -1111,12 +1297,24 @@
         <div class="gallery-item reveal">
           <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80" alt="Perfume bottles" loading="lazy">
         </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80" alt="Serum bottle" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80" alt="Foundation bottle" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1585652757141-8837d676fac8?w=600&q=80" alt="Cleanser" loading="lazy">
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80" alt="Hair care products" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ========== HOURS & LOCATION ========== -->
-  <section class="section-padding" id="hours" style="background: var(--bg-white);">
+  <section class="section-padding" id="hours">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Visit Us</span>
@@ -1175,7 +1373,7 @@
   </section>
 
   <!-- ========== CONTACT ========== -->
-  <section class="section-padding" id="contact">
+  <section class="section-padding" style="background: var(--bg-white);" id="contact">
     <div class="container">
       <div class="section-header reveal">
         <span class="subtitle">Get In Touch</span>
@@ -1261,6 +1459,7 @@
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#services">Collections</a></li>
+            <li><a href="#trending">Trending</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
